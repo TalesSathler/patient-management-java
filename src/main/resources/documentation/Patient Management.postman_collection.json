@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "7f906e03-8be7-4910-a3c9-5af2f8d4ad6a",
+		"name": "Patient Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/person/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Doctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"personCPF\": \"725.482.428-11\",\n    \"personName\": \"João da Silva\",\n    \"personType\": \"doctor\",\n    \"doctor\": {\n        \"doctorCRM\": \"asd315\"\n    },\n    \"user\": {\n        \"userLogin\": \"joao_silva\",\n        \"userPassword\": \"123456\",\n        \"roles\": [\n            {\n                \"roleId\": \"1\",\n                \"roleName\": \"doctor\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Doctor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"personId\": \"1\",\n    \"personCPF\": \"725.482.428-11\",\n    \"personName\": \"João da Silva\",\n    \"personType\": \"doctor\",\n    \"doctor\": {\n        \"doctorCRM\": \"asd3151\"\n    },\n    \"user\": {\n        \"userId\": \"1\",\n        \"userLogin\": \"joao_silva\",\n        \"userPassword\": \"123456\",\n        \"roles\": [\n            {\n                \"roleId\": \"1\",\n                \"roleName\": \"doctor\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/person/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Nurse",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"personCPF\": \"487.577.664-01\",\n    \"personName\": \"Maria\",\n    \"personType\": \"nurse\",\n    \"nurse\": {\n        \"nurseCOREN\": \"85412\"\n    },\n    \"user\": {\n        \"userLogin\": \"maria\",\n        \"userPassword\": \"123456\",\n        \"roles\": [\n            {\n                \"roleId\": \"3\",\n                \"roleName\": \"nurse\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Nurse",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"personId\": \"2\",\n    \"personCPF\": \"487.577.664-01\",\n    \"personName\": \"Maria da Silva\",\n    \"personType\": \"nurse\",\n    \"nurse\": {\n        \"nurseCOREN\": \"1234\"\n    },\n    \"user\": {\n        \"userLogin\": \"maria\",\n        \"userPassword\": \"123456\",\n        \"roles\": [\n            {\n                \"roleId\": \"3\",\n                \"roleName\": \"nurse\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/person/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"personCPF\": \"434.825.475-30\",\n    \"personName\": \"Carla\",\n    \"personType\": \"patient\",\n    \"patient\": {\n        \"patientBirthday\": \"1990-12-20\",\n        \"patientHeight\": \"1.65\",\n        \"patientUF\": \"SP\",\n        \"patientWeight\": \"56.2\"\n    },\n    \"user\": {\n        \"userLogin\": \"carla\",\n        \"userPassword\": \"123456\",\n        \"roles\": [\n            {\n                \"roleId\": \"2\",\n                \"roleName\": \"patient\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Patient",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"personId\": \"3\",\n    \"personCPF\": \"434.825.475-30\",\n    \"personName\": \"Carla da Silva\",\n    \"personType\": \"patient\",\n    \"patient\": {\n        \"patientBirthday\": \"1992-12-20\",\n        \"patientHeight\": \"1.60\",\n        \"patientUF\": \"SP\",\n        \"patientWeight\": \"56.2\"\n    },\n    \"user\": {\n        \"userLogin\": \"carla\",\n        \"userPassword\": \"123456\",\n        \"roles\": [\n            {\n                \"roleId\": \"2\",\n                \"roleName\": \"patient\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/person/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/person/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"person",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "03ccec9e-0309-4af2-a2a9-4072c9cbc720",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "dd71646d-3bd7-4a80-9b00-79b9cc5bf13d",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "25838822-ed9c-48b8-bdb1-4f2d25248775",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "joao_silva",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
